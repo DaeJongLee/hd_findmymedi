@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import SearchBar from './SearchBar';
+import { Search, Info } from 'lucide-react';
 
 const SalesAreaLayout = () => {
   const [selectedCell, setSelectedCell] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleCellClick = (cellContent, rowIndex, colIndex) => {
     setSelectedCell({ content: cellContent, row: rowIndex, col: colIndex });
   };
 
-  const handleSearch = (searchTerm) => {
+  const handleSearch = (e) => {
+    e.preventDefault();
     alert(`검색어 "${searchTerm}"에 대한 검색 실행`);
-    // 여기에 실제 검색 로직을 구현할 수 있습니다.
   };
 
   const layout = [
@@ -41,9 +42,22 @@ const SalesAreaLayout = () => {
     <div className="max-w-4xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">판매위치 영역 상세 레이아웃</h1>
       
-      <SearchBar onSearch={handleSearch} />
+      <form onSubmit={handleSearch} className="mb-4">
+        <div className="flex">
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="약품 검색..."
+            className="flex-grow p-2 border rounded-l"
+          />
+          <button type="submit" className="bg-blue-500 text-white p-2 rounded-r">
+            <Search size={20} />
+          </button>
+        </div>
+      </form>
       
-      <div className="grid grid-cols-8 gap-1 mb-4 mt-4">
+      <div className="grid grid-cols-8 gap-1 mb-4">
         {layout.map((row, rowIndex) => 
           row.map((cell, colIndex) => (
             <button
@@ -59,7 +73,10 @@ const SalesAreaLayout = () => {
       
       {selectedCell && (
         <div className="mt-4 p-4 border rounded">
-          <h3 className="text-lg font-semibold">선택된 영역 정보</h3>
+          <h3 className="text-lg font-semibold flex items-center">
+            <Info className="mr-2" />
+            선택된 영역 정보
+          </h3>
           <p className="mt-2">
             내용: {selectedCell.content}<br />
             위치: {selectedCell.row + 1}행 {selectedCell.col + 1}열
