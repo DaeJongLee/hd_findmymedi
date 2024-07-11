@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Package, MapPin, BarChart } from 'lucide-react';
+import { Search, Package, MapPin, BarChart, List } from 'lucide-react';
 
 const mockInventoryData = [
   { id: 1, name: '네오무릎보호대 좌우겸용', manufacturer: '헬스메이트', stock: 10, location: 'DPA/SL' },
@@ -59,6 +59,10 @@ const Dashboard = () => {
         <Link to="/compounding" className="p-4 bg-yellow-100 rounded hover:bg-yellow-200">
           <h3 className="font-bold">조제실 영역</h3>
           <p>조제실 레이아웃 보기</p>
+        </Link>
+        <Link to="/products" className="p-4 bg-purple-100 rounded hover:bg-purple-200">
+          <h3 className="font-bold">제품 관리</h3>
+          <p>제품 목록 및 관리</p>
         </Link>
       </div>
     </div>
@@ -121,6 +125,13 @@ const Dashboard = () => {
           <MapPin size={20} className="inline-block mr-2" />
           위치 관리
         </button>
+        <Link
+          to="/products"
+          className={`ml-2 px-4 py-2 rounded bg-purple-500 text-white`}
+        >
+          <List size={20} className="inline-block mr-2" />
+          제품 관리
+        </Link>
       </div>
       
       <div className="bg-white p-4 rounded shadow">
