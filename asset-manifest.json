@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/hd_findmymedi/static/css/main.e6c13ad2.css",
+    "main.js": "/hd_findmymedi/static/js/main.7cf4b17e.js",
+    "static/js/453.1ddaee06.chunk.js": "/hd_findmymedi/static/js/453.1ddaee06.chunk.js",
+    "index.html": "/hd_findmymedi/index.html",
+    "main.e6c13ad2.css.map": "/hd_findmymedi/static/css/main.e6c13ad2.css.map",
+    "main.7cf4b17e.js.map": "/hd_findmymedi/static/js/main.7cf4b17e.js.map",
+    "453.1ddaee06.chunk.js.map": "/hd_findmymedi/static/js/453.1ddaee06.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.7cf4b17e.js"
+  ]
+}
