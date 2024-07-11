@@ -2487,10 +2487,6 @@
         {
             "name": "쑥찜팩",
             "location": "blue .2"
-        },
-        {
-            "name": "```",
-            "location": NaN
         }
     ],
     "locations": {
